@@ -1,0 +1,12 @@
+// Crear la base de datos
+use('dbGastroManager')
+
+// Retirar la "Ensalada César" de la carta. 
+db.pedidos.deleteMany(
+    {estado: "pagado"}
+)
+
+//Listar los Pedidos 
+db.pedidos.find()
+
+// nuevos cambios
