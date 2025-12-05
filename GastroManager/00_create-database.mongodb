@@ -1,0 +1,2 @@
+// crear la base de datos
+use('dbGastoManager')

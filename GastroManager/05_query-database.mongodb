@@ -1,0 +1,19 @@
+use('dbGastroManager')
+
+
+// listar platillos de la categoría Fondo
+db.menu.find({ categoria: "Fondo" })
+
+// buscas platos que no contengan pollo en ingredientes
+db.menu.find({ ingredientes: { $ne: "Pollo" } })
+
+// Listar nombre y precio de platillos veganos
+db.menu.find(
+    { esVegano: true }, //condicion de listado/busqueda
+    { nombre: 1, precio: 1, _id: 0 }//atributos que se quieres mostrar
+)
+// Pedidos atendidos por Juan que estén En Cocina
+db.pedidos.find({ 
+    mesero: "Juan", 
+    estado: "En cocina" 
+}).pretty()

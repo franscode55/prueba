@@ -1,0 +1,11 @@
+
+// crear la base de datos
+use('dbGastroManager')
+
+//cambiar el estado del pedido 2, dependiente a servido
+db.pedidos.updateOne(
+    { mesa: 2 }, //condición para la actualización
+    { $set: { estado: "Servido" } } //actualizamos el dato del estado
+)
+    //listamos el docuemtno de la mesa 2
+    db.pedidos.find({ mesa: 2 })
