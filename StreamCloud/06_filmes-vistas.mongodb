@@ -1,0 +1,10 @@
+//crear base de datos
+use("dbStreamCloud")
+
+// finanzas quiere evaluar que contenido retirar,
+//averigua que contenido tiene menos de 3000000 vistas
+//mostrar titulo, tipo y vistas
+db.catalogo.find(
+    {vistas: {$lt: 3000000}}, //lt = (menor que)
+    {titulo:1, tipo:1, vistas:1, _id:0} //proyección
+).sort({vistas:1}) //1 = ordenamiento ascendente

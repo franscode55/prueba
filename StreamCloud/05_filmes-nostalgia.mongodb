@@ -1,0 +1,12 @@
+//crear base de datos
+use("dbStreamCloud")
+
+//Listar las peliculas de nostalgia (antes del 2000)
+//Mostrar solo el titulo y año
+db.catalogo.find(
+
+    {tipo: "Serie", anio: {$lte: 2000}}, //lte = (menor igual que)
+
+    {titulo:1, anio:1, _id:0} //proyección
+
+).sort({anio:1}) //1 = ordenamiento ascendente
